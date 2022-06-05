@@ -1,0 +1,682 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&family=Roboto:wght@400;700;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: transparent;
+    border: none;
+    --green-code-text: hsl(119, 100%, 30%);
+    --pink-code-text: hsl(306, 100%, 50%);
+    --yellow-code-text: hsl(47, 94%, 70%);
+    --golden : hsl(47, 100%, 50%);
+    --blue: hsl(198, 100%, 23%);
+    --light-blue:hsla(201, 99%, 70%, 0.5);
+    --paragraph: hsl(0, 0%, 15%);
+    
+    /*lang-dev color*/
+    --html-color: hsl(29, 98%, 51%);
+    --css-color: hsl(202, 98%, 51%);
+    --js-color: hsl(47, 98%, 51%);
+
+    --height-menu: 7.5rem
+}
+
+html{
+    /*trocado de 10px para 62.5% que pelo padrão do browser de 16px 
+    da na mesma, mas este forma da mais acessibilidade para quem 
+    precisa de letras maiores*/
+    font-size: 62.5%;
+    font-family:'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+body{
+    background: url(./assets/img/background.png);
+    background-position-y: -100%;
+}
+section > h1{
+    margin-bottom: 6rem;
+}
+h1, h2{
+    font-size: 5.2rem;
+    font-weight: 800;
+    line-height: 6.1rem;
+}
+h2{
+    font-size: 4rem;
+    line-height: 4.7rem;
+}
+h1, h2, p, li{
+    text-align: center;
+}
+ul,ol{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+
+}
+img{
+    display: block;
+}
+p, li{
+    font-size: 1.8rem;
+    font-size: 1.4rem;
+    margin-top: 5px;
+    line-height: 130%;
+    font-weight: 200;
+    letter-spacing: 0.05rem;
+}
+.cta{
+    background-color: transparent;
+    border-radius: 4rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    transition-property: background-color, color;
+
+}
+.cta a{
+    color: var(--golden);
+    width: inherit;
+}
+.section-title {
+    font-size: 4rem;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-align: center;
+}
+
+/*-----------------------------------------------------Seção de navegação------------------------------------------------*/
+nav svg{
+    min-width: 10.5rem;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: var(--height-menu);
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 5rem ;
+    background: var(--blue);
+    visibility: hidden;
+
+}
+.show-menu nav {
+    visibility: visible;
+}
+.logo{
+    width: auto;
+    height: 7rem;
+}
+nav ul{
+    display: flex;
+    gap: 3.2rem;
+    align-items: center;
+    display: none;
+}
+nav ul li{
+    height: 7.5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: solid transparent .3rem;
+}
+nav ul li:hover{
+    border-bottom: solid var(--golden) .3rem;
+}
+nav ul li:hover a{
+    color: var(--golden);
+}
+.button-contact{
+    padding: 1rem 2.4rem;
+    border: solid var(--golden) .2rem;
+    display: none;
+    
+}
+.button-contact:hover{
+    background: var(--golden);
+    border: solid var(--golden) .2rem;
+}
+.button-contact:hover a{
+    color: white;
+}
+.button-menu-mobile{
+    display: flex;
+}
+.button-menu-mobile img{
+    width: 5.5rem;
+}
+.show-mobile-menu{
+    overflow: hidden;
+}
+.show-mobile-menu .hidden-menu{
+    visibility: visible;
+}
+.hidden-menu{
+    position: fixed;
+    z-index: 50;
+    width: 100%;
+    height: 100%;
+    padding-top:  calc(var(--height-menu) + 6rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15.5rem;
+    background: var(--blue);
+    visibility: hidden;
+}
+.hidden-menu ul:first-child{
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    font-size: 2.4rem;
+    font-weight: bold;
+
+}
+.hidden-menu ul:first-child li:last-child{
+    background: white;
+    padding: 1.6rem 3.2rem;
+    border-radius: 4rem;
+}
+.hidden-menu ul:first-child li:last-child a{
+    color: var(--blue);
+}
+/* ----------------------------------------------------------Seção de apresentação --------------------------------------*/
+
+#presentation{
+    background-image: url(./assets//img/background-img.png);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 10;
+    height: 100vh;
+
+    padding-inline: 10rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.block-coding-container{
+    position: relative;
+    margin-top: 5rem;
+}
+.presentation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+}
+.bar-block-coding-img{
+    max-width: 37.428rem;
+}
+.astronaut-img{
+    min-width: 2rem;
+    min-height: 5rem;
+    max-width: 27.5rem;
+    max-height: 29rem;
+    position: absolute;
+    top: 0;
+    left: 5rem;
+    top: 2rem;
+    z-index: -0.5;
+}
+.function-hello-world{
+    display: inline-block;
+    background: url(./assets//img/body-window-coding.svg);
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+.function-hello-world code{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2.4rem;
+}
+.tryping-line{
+    display: inline-block;
+    border-right: 3px solid transparent;
+    max-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blink-text normal infinite .5s, tryping normal 2s steps(30) both;
+}
+.function-line-two{
+    animation-delay: 2s;
+}
+.function-line-tree{
+    animation-delay: 4s;
+}
+.function-line-four{
+    animation-delay: 6s;
+}
+.function-line-five{
+    animation-delay: 8s;
+}
+.function-coding-text, .parentheses-code-text{
+    color: var(--pink-code-text);
+}
+.argument-and-block-function-coding-text{
+    color: var(--golden);
+}
+.print-coding-text, .name-function-coding-text{
+    color: var(--green-code-text);
+    
+}
+.string-code-text{
+    color: var(--yellow-code-text);
+}
+#presentation h1, .h1-text {
+    margin: 0;
+    font-size: 5rem;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1.5s;
+
+}
+.h1-text{
+    position: relative;
+    width: fit-content;
+}
+.buttton-presentation{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+#presentation .h1-text:first-child{
+    animation-delay: 4s;
+}
+#presentation .h1-text:nth-child(2){
+    animation-delay: 6s;
+}
+#presentation .h1-text:last-child{
+    animation: text_reveal_name .5s ease forwards;
+    animation-delay: 8s;
+}
+#presentation .cta{
+    border: .5rem solid var(--golden);
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+#presentation .cta a{
+    display: block;
+    padding: 2rem 6rem;
+    color: var(--golden);
+    width: inherit;
+}
+
+#presentation .cta:hover{
+    font-weight: 500;
+    background-color: var(--golden);
+}
+#presentation .cta a:hover{
+    color: white;
+}
+.h1-box-text{
+    position: relative;
+}
+.reveal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    animation: text_reveal_box 1s ease;
+    animation-delay: 3.5s;
+    background-color: var(--golden);
+}
+#presentation h1 .h1-text:nth-child(2) .reveal{
+    animation-delay: 5.5s;
+}
+#presentation h1 .h1-text:nth-child(3) .reveal{
+    animation-delay: 7.5s;
+}
+#presentation::after{
+    content: '';
+    position: absolute;
+    left:0;
+    top: 0;
+    height:100%;
+    width: 100%;
+    background-color:black;
+    opacity: 0.5;
+    z-index: -1;
+}
+/* -------------------------------------------Seção de sobre mim-------------------------------- */
+#about .about{
+    margin-top: var(--height-menu);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+#about .about header{
+    height: fit-content;
+
+}
+#about .about header h1{
+    margin-bottom: 6rem;
+
+}
+#about .about header p{
+    margin-bottom: 3.2rem;
+
+}
+#about .about main,
+#about .about header{
+    max-width: 75.1rem;
+}
+#about .about .section-avatar{
+    margin-left: 2.3rem;
+    margin-bottom: 10rem;
+    position: relative;
+    top: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+}
+#about .about main, 
+#about .about main div{
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+#about .section-avatar > img{
+    width: 25rem;
+    border-radius: 50%;
+    border: var(--blue) solid .4rem;
+    border-top: var(--blue)  dotted .4rem;
+    border-left: var(--blue)  dotted .4rem;
+}
+:is(#about) .dev-lang, .media-social{
+    display: flex;
+    gap: 3.2rem;
+}
+#about .dev-lang{
+    font-size: 1.2rem;
+    font-weight: 900;
+
+}
+#about .dev-lang span{
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+}
+#about .dev-lang span:nth-child(1){
+    color: var(--html-color)
+}
+#about .dev-lang span:nth-child(2){
+    color: var(--css-color);
+}
+#about .dev-lang span:nth-child(3){
+    color: var(--js-color);
+}
+/* -----------------------------Seção de Portifólio------------------------------- */
+
+#portfolio .portfolio{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+#portfolio .portfolio-header h1{
+    margin-bottom: 50px;
+}
+#portfolio .all-projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+#portfolio .project-item{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+    margin: 2rem auto;
+    border-radius: 10px;
+}
+
+#portfolio .project-info {
+    padding: 30px;
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background:var(--light-blue);
+    color: var(--paragraph);
+}
+
+#portfolio .project-info h1{
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+#portfolio .project-info h2{
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+#portfolio .project-img {
+    flex-basis: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+#portfolio .project-img:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(60deg,hsla(212, 21%, 38%, 0.5) 0%, hsla(211, 18%, 52%, 0.5) 100%);
+    opacity: 0.7;
+}
+#portfolio .project-img img{
+    transition: 0.5s ease transform;
+}
+#portfolio .project-item:hover .project-img img{
+    transform: scale(1.1);
+}
+#contact main{
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 14.7rem;
+    position: relative;
+    width: fit-content;
+    margin-inline: auto;
+}
+#contact .img-phone-contact{
+    width: 11.5rem;
+    position: absolute;
+    top: 6rem;
+    right: 0;
+
+}
+#contact div div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.1rem;
+
+}
+#contact div img{
+    width: 4.8rem;
+}
+#contact div a {
+    text-decoration: underline;
+}
+#contact div a , 
+#contact div span{
+    font-size: 2.4rem;
+    color: var(--paragraph);
+}
+#backToTop{
+    position: fixed;
+    z-index: 2;
+    bottom: 2rem;
+    right: 2.5rem;
+}
+footer{
+    color: white    ;
+    background: var(--blue);
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 6rem 12.3rem;
+    position: relative;
+    text-align: center;
+}
+/* Seção de rodapé*/
+footer div:first-child{
+    display: flex;
+    flex-direction: column;
+}
+footer div:nth-child(2){
+    padding-top: 4rem;
+}
+footer .media-social{
+    justify-content: center;
+}
+/* ----------------------------Keyframes ----------------------------------------------*/
+@keyframes blink-text{
+    100%{
+        border-right-color: white;
+    }
+}
+@keyframes tryping{
+    100%{
+        max-width: 100%;
+        border-right-color: transparent;
+    }
+}
+@keyframes text_reveal{
+    100%{
+        color: white;
+    }
+}
+@keyframes text_reveal_name{
+    100%{
+        color: var(--golden);
+        font-weight: 500px;
+    }
+}
+
+@keyframes text_reveal_box{
+    50%{
+        width:100%;
+        left:0;
+    }
+    100%{
+        width: 0;
+        left:100%
+    }
+}
+
+/*---------------------------------------------------- Media Query ----------------------------------------*/
+@media only screen and (max-width:770px) {
+    .astronaut-img{
+        display: none;
+    }
+}
+@media only screen and (min-width: 938px) {
+    nav {
+        padding-inline:12.3rem ;
+    }
+    nav ul{
+        display: flex;
+    }
+    .button-contact{
+        display: flex;
+    }
+    .button-menu-mobile{
+        display: none;
+    }
+    #presentation{
+        display: grid;
+        justify-content: left;
+        align-content: center;
+    }
+    .presentation{
+        flex-direction: row;
+
+    }
+    .buttton-presentation{
+        flex-direction: row;
+        gap: 12rem;
+    }
+    #about .about{
+        display: grid;
+        align-items: baseline;
+        grid-template-columns: 1fr 2.5fr;
+        grid-template-areas: "aside header "
+                              ". main ";
+    
+    }
+    #about .about header{
+        grid-area: header;
+        height: fit-content;
+    
+    }
+    #about .about header h1{
+        margin-bottom: 6rem;
+    
+    }
+    #about .about header p{
+        margin-bottom: 3.2rem;
+    
+    }
+    #about .about main,
+    #about .about header{
+        max-width: 75.1rem;
+    }
+    #about .about .section-avatar{
+        grid-area: aside;
+        top: 10rem;
+    }
+    #about .about main{
+        grid-area: main;    
+    }
+    #portfolio .project-item {
+        flex-direction: row;
+        height: 400px;
+        margin: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+    #portfolio .all-projects .project-info{
+        height: 100%
+    }
+    #portfolio .all-projects .project-img{
+        height: 100%
+    }
+    #portfolio .project-item:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    footer{
+        flex-direction: row;
+    }
+    footer .media-social{
+        position: absolute;
+        bottom: 6rem;
+        right: 12.3rem;
+    }
+}
