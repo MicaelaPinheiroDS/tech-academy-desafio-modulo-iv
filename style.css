@@ -60,6 +60,7 @@ a{
 }
 img{
     display: block;
+    width: 100%;
 }
 p, li{
     font-size: 1.8rem;
