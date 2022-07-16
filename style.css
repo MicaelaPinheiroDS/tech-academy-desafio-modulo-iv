@@ -198,7 +198,7 @@ nav ul li:hover a{
     background-position: top center;
     position: relative;
     z-index: 10;
-    height: 100vh;
+    height: 100%;
 
     padding-inline: 10rem;
     display: flex;
